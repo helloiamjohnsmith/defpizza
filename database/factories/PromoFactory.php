@@ -11,6 +11,7 @@ $factory->define(Promo::class, function (Faker $faker) {
     return [
         'title' => $faker->unique()->word,
         'code' => Str::random(5),
-        'started_at' => Carbon::createFromDate()->format('Y-m-d H:i:s')
+        'started_at' => Carbon::now()->subDays(rand(0, 30)),
+        'ended_at' => Carbon::now()->addDays(rand(0, 30)),
     ];
 });
