@@ -2,10 +2,10 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class PromoSeeder extends Seeder
 {
     public function run()
     {
-        $this->call(IngredientSeeder::class);
+
     }
 }
