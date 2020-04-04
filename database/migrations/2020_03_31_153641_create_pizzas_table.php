@@ -15,9 +15,9 @@ class CreatePizzasTable extends Migration
     {
         Schema::create('pizzas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('type_id');
             $table->string('title');
             $table->text('description');
+            $table->string('image')->nullable();
             $table->integer('weight');
             $table->integer('carbohydrate')->nullable();
             $table->integer('fat')->nullable();
@@ -25,14 +25,6 @@ class CreatePizzasTable extends Migration
             $table->integer('energy')->nullable();
             $table->timestamps();
             $table->softDeletes();
-
-            $table->index(["type_id"], 'fk_pizzas_pizza_types1_idx');
-
-            $table->foreign('type_id', 'fk_pizzas_pizza_types1_idx')
-                ->references('id')
-                ->on('pizza_types')
-                ->onDelete('no action')
-                ->onUpdate('no action');
         });
     }
 
