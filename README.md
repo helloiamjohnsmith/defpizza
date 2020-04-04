@@ -16,6 +16,11 @@
 - purple #7435FF
 - yellow #FEDE36
 
+## Seeding data
+The application is prepared both for testing and running in production mode with real data. Some models such as 
+``Pizza ingredient`` available only with real values. Models like ``Pizza`` available with prepared real data which 
+automatically will be seeded in production mode. But there is ``Pizza factory`` for testing purposes.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
