@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -34,5 +35,18 @@ class Pizza extends Model
     public function types()
     {
         return $this->belongsToMany(PizzaType::class, 'current_pizza_types');
+    }
+
+    public function prices()
+    {
+        return $this->hasMany(PizzaPrice::class, 'pizza_id');
+    }
+
+    public function getActualPriceAttribute()
+    {
+        return $this->prices()
+            ->whereDate('started_at', '<=', Carbon::now()->toDateString())
+            ->whereDate('ended_at', '>=', Carbon::now()->toDateString())
+            ->first();
     }
 }
