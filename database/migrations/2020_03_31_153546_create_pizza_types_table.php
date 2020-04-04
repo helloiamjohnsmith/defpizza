@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreatePizzaTypesTable extends Migration
@@ -18,6 +19,16 @@ class CreatePizzaTypesTable extends Migration
             $table->string('slug');
             $table->string('title');
         });
+
+        $types = [
+            ['slug' => 'vegetarian', 'title' => 'vegetarian'],
+            ['slug' => 'new', 'title' => 'new'],
+            ['slug' => 'spicy', 'title' => 'spicy'],
+            ['slug' => 'for-kids', 'title' => 'for kids'],
+            ['slug' => 'healthy', 'title' => 'healthy'],
+        ];
+
+        DB::table('pizza_types')->insert($types);
     }
 
     /**
