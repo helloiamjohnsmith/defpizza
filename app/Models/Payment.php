@@ -12,7 +12,7 @@ class Payment extends Model
     protected $fillable = [];
 
     protected $casts = [
-        'paid_at' => 'timestamp',
+        'paid_at' => 'datetime',
         'by_cash' => 'boolean'
     ];
 
