@@ -1,7 +1,6 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: ssz
- * Date: 05.04.2020
- * Time: 13:13
- */
+{{--<div class="ml-3">--}}
+{{--    <button class="btn btn-outline-primary">--}}
+{{--        <i data-feather="log-in"></i>--}}
+{{--    </button>--}}
+{{--</div>--}}
+

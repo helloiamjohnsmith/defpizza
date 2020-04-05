@@ -12,4 +12,6 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     @stack('css')
+
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
