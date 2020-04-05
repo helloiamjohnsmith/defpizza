@@ -19,6 +19,7 @@ class CreatePromosTable extends Migration
             $table->string('code');
             $table->timestamp('started_at');
             $table->timestamp('ended_at');
+            $table->integer('discount');
             $table->timestamps();
             $table->softDeletes();
         });
