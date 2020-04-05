@@ -13,5 +13,6 @@ $factory->define(Promo::class, function (Faker $faker) {
         'code' => Str::random(5),
         'started_at' => Carbon::now()->subDays(rand(0, 30)),
         'ended_at' => Carbon::now()->addDays(rand(0, 30)),
+        'discount' => rand(15, 50),
     ];
 });
