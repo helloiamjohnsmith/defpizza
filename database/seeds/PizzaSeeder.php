@@ -11,9 +11,9 @@ class PizzaSeeder extends Seeder
         $ingredients = Ingredient::all();
         $sizes = Size::all();
 
-        factory(App\Models\Pizza::class, 20)->create()->each(function ($pizza) use ($ingredients, $sizes) {
+        factory(App\Models\Pizza::class, 30)->create()->each(function ($pizza) use ($ingredients, $sizes) {
             $pizza->ingredients()->attach(
-                $ingredients->random(rand(3, 8))->pluck('id')->toArray()
+                $ingredients->random(rand(5, 10))->pluck('id')->toArray()
             );
 
             $pizza->availableSizes()->attach(
