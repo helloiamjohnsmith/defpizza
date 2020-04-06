@@ -13,7 +13,7 @@ class PizzaSeeder extends Seeder
 
         factory(App\Models\Pizza::class, 30)->create()->each(function ($pizza) use ($ingredients, $sizes) {
             $pizza->ingredients()->attach(
-                $ingredients->random(rand(5, 10))->pluck('id')->toArray()
+                $ingredients->random(rand(3, 8))->pluck('id')->toArray()
             );
 
             $pizza->availableSizes()->attach(
