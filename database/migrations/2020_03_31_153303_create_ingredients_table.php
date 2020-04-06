@@ -22,7 +22,7 @@ class CreateIngredientsTable extends Migration
             $table->boolean('sea')->default(false);
             $table->boolean('healthy')->default(false);
             $table->boolean('meat')->default(false);
-            $table->integer('spiCy')->default(false);
+            $table->integer('spicy')->default(false);
         });
 
         $ingredients = [
