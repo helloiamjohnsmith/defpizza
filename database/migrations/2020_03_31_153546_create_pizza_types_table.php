@@ -26,6 +26,7 @@ class CreatePizzaTypesTable extends Migration
             ['slug' => 'spicy', 'title' => 'spicy'],
             ['slug' => 'for-kids', 'title' => 'for kids'],
             ['slug' => 'healthy', 'title' => 'healthy'],
+            ['slug' => 'sea-food', 'title' => 'sea food'],
         ];
 
         DB::table('pizza_types')->insert($types);
