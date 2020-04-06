@@ -6,9 +6,6 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * @method static whereNotIn(string $string, $usedIn)
- */
 class Pizza extends Model
 {
     use SoftDeletes;
@@ -34,7 +31,7 @@ class Pizza extends Model
 
     public function types()
     {
-        return $this->belongsToMany(PizzaType::class, 'current_pizza_types');
+        return $this->belongsToMany(PizzaType::class, 'current_pizza_types', 'pizza_id', 'type_id');
     }
 
     public function prices()
