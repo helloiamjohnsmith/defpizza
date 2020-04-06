@@ -10,6 +10,6 @@ class PizzaType extends Model
 
     public function pizzas()
     {
-        return $this->belongsToMany(Pizza::class, 'current_pizza_types');
+        return $this->belongsToMany(Pizza::class, 'current_pizza_types', 'type_id', 'pizza_id');
     }
 }
