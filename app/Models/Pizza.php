@@ -14,6 +14,8 @@ class Pizza extends Model
         'title', 'description', 'weight', 'carbohydrate', 'fat', 'protein', 'energy'
     ];
 
+    protected $with = ['ingredients', 'availableSizes'];
+
     public function ingredients()
     {
         return $this->belongsToMany(Ingredient::class, 'pizza_ingredients');
