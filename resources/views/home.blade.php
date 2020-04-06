@@ -12,40 +12,30 @@
             <button class="btn btn-pizza btn-pill">Without meat</button>
             <button class="btn btn-pizza btn-pill">Vegetarian</button>
             <button class="btn btn-pizza btn-pill">For kids</button>
-            <button class="btn btn-pizza btn-pill">Hit!</button>
+            <button class="btn btn-pizza btn-pill">Healthy</button>
+            <button class="btn btn-pizza btn-pill">Diet</button>
             <button class="btn btn-pizza btn-pill">Spicy</button>
-            <button class="btn btn-pizza btn-pill">Without onion</button>
-            <button class="btn btn-pizza btn-pill">Without mushrooms</button>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="holland">
-                <div class="holland__body">
-                    <a class="link" href="#">Go to there</a> baby
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="holland">
-                <div class="holland__body">
-                    Hello
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="holland">
-                <div class="holland__body">
-                    Hello
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="holland">
-                <div class="holland__body">
-                    Hello
-                </div>
+        <div class="col-12">
+            <div class="d-flex">
+                @foreach($pizzas as $pizza)
+                    <div class="pizza-card">
+                        <div class="pizza-card__wrapper">
+                            <div class="pizza-card__image">
+                                <img src="{{ $pizza->image }}">
+                            </div>
+                            <div class="pizza-card__header">
+                                {{ $pizza->title }}
+                            </div>
+                            <div>
+                                {{ $pizza->description }}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

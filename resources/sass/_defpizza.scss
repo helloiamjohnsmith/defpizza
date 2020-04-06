@@ -2,11 +2,11 @@
 // Colors
 //
 
-$brand: #7435FF;
+$brand: #FF8300;
 
 $brand-colors: (
+    king: 7435FF,
     ocean: #148DFF,
-    juice: #FF8300,
     grass: #7BD100,
     ruby: #FF4651,
     sun: #FEDE36
@@ -97,6 +97,42 @@ $brand-colors: (
         }
     }
 }
+
+//
+// Pizza card
+//
+.pizza-card {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    width: 292px;
+    margin-right: 40px;
+    flex-flow: column;
+
+    .pizza-card__wrapper {
+        width: 100%;
+        font-size: 14px;
+        line-height: 20px;
+        color: rgb(115, 121, 140);
+        font-weight: 400;
+        margin: 0px;
+
+        .pizza-card__image {
+            position: relative;
+            width: 100%;
+            margin: 0px;
+        }
+
+        .pizza-card__header {
+            color: #000;
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: 500;
+            margin: 8px 0px;
+        }
+    }
+}
+
 
 
 

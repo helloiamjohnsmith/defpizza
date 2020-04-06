@@ -1,4 +1,4 @@
-<div class="bg-white shadow-sm">
+<div class="bg-white">
     <div class="container">
         <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top">
             @include('layouts.master.partials.header._brand')
