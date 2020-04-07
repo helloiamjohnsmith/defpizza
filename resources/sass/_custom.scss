@@ -18,16 +18,21 @@
     &.btn-pizza {
         transition: all 0.3s ease 0s;
 
-        border: 1px solid lighten($brand, 20%);
+        border: 1px solid $brand;
         cursor: pointer;
         align-items: center;
         background-color: #FFF;
-        color: #595D6E;
+        color: $brand;
         margin-bottom: 0.5rem;
         margin-right: 0.5rem;
 
         &:hover {
             transform: translate(0, -4px);
+        }
+
+        &.active {
+            background-color: $brand;
+            color: #FFF;
         }
     }
 }
