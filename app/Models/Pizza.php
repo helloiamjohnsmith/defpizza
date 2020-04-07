@@ -43,9 +43,11 @@ class Pizza extends Model
 
     public function getActualPriceAttribute()
     {
-        return $this->prices()
-            ->whereDate('started_at', '<=', Carbon::now()->toDateString())
-            ->whereDate('ended_at', '>=', Carbon::now()->toDateString())
-            ->first();
+        $price =  $this->prices()
+             ->whereDate('started_at', '<=', Carbon::now()->toDateString())
+             ->whereDate('ended_at', '>=', Carbon::now()->toDateString())
+             ->first();
+
+        return $price ? $price : new PizzaPrice();
     }
 }

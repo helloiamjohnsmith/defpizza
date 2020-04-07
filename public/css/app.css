@@ -138,11 +138,21 @@
 }
 
 .pizza-cards .pizza-cards__section .pizza-card .pizza-card__wrapper .pizza-card__header {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.pizza-cards .pizza-cards__section .pizza-card .pizza-card__wrapper .pizza-card__header .pizza-card__title {
   color: #000;
   font-size: 20px;
   line-height: 24px;
-  font-weight: 500;
-  margin: 8px 0;
+}
+
+.pizza-cards .pizza-cards__section .pizza-card .pizza-card__wrapper .pizza-card__header .pizza-card__weight {
+  color: #444;
+  font-size: 16px;
 }
 
 .pizza-cards .pizza-cards__section .pizza-card .pizza-card__wrapper .pizza-card__body {
@@ -261,7 +271,7 @@
   --warning: #ffc107;
   --danger: #dc3545;
   --light: #f8f9fa;
-  --dark: #645CA1;
+  --dark: #242939;
   --alert: #FFB822;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -2248,23 +2258,23 @@ pre code {
 .table-dark,
 .table-dark > th,
 .table-dark > td {
-  background-color: #d4d1e5;
+  background-color: #c2c3c8;
 }
 
 .table-dark th,
 .table-dark td,
 .table-dark thead th,
 .table-dark tbody + tbody {
-  border-color: #aeaace;
+  border-color: #8d9098;
 }
 
 .table-hover .table-dark:hover {
-  background-color: #c5c1dc;
+  background-color: #b5b6bc;
 }
 
 .table-hover .table-dark:hover > td,
 .table-hover .table-dark:hover > th {
-  background-color: #c5c1dc;
+  background-color: #b5b6bc;
 }
 
 .table-alert,
@@ -3239,43 +3249,43 @@ fieldset:disabled a.btn {
 
 .btn-dark {
   color: #fff;
-  background-color: #645CA1;
-  border-color: #645CA1;
+  background-color: #242939;
+  border-color: #242939;
 }
 
 .btn-dark:hover {
   color: #fff;
-  background-color: #554e89;
-  border-color: #504981;
+  background-color: #151822;
+  border-color: #10131a;
 }
 
 .btn-dark:focus,
 .btn-dark.focus {
   color: #fff;
-  background-color: #554e89;
-  border-color: #504981;
-  box-shadow: 0 0 0 0.2rem rgba(123, 116, 175, 0.5);
+  background-color: #151822;
+  border-color: #10131a;
+  box-shadow: 0 0 0 0.2rem rgba(69, 73, 87, 0.5);
 }
 
 .btn-dark.disabled,
 .btn-dark:disabled {
   color: #fff;
-  background-color: #645CA1;
-  border-color: #645CA1;
+  background-color: #242939;
+  border-color: #242939;
 }
 
 .btn-dark:not(:disabled):not(.disabled):active,
 .btn-dark:not(:disabled):not(.disabled).active,
 .show > .btn-dark.dropdown-toggle {
   color: #fff;
-  background-color: #504981;
-  border-color: #4b4578;
+  background-color: #10131a;
+  border-color: #0b0d12;
 }
 
 .btn-dark:not(:disabled):not(.disabled):active:focus,
 .btn-dark:not(:disabled):not(.disabled).active:focus,
 .show > .btn-dark.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(123, 116, 175, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(69, 73, 87, 0.5);
 }
 
 .btn-alert {
@@ -3572,24 +3582,24 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-dark {
-  color: #645CA1;
-  border-color: #645CA1;
+  color: #242939;
+  border-color: #242939;
 }
 
 .btn-outline-dark:hover {
   color: #fff;
-  background-color: #645CA1;
-  border-color: #645CA1;
+  background-color: #242939;
+  border-color: #242939;
 }
 
 .btn-outline-dark:focus,
 .btn-outline-dark.focus {
-  box-shadow: 0 0 0 0.2rem rgba(100, 92, 161, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(36, 41, 57, 0.5);
 }
 
 .btn-outline-dark.disabled,
 .btn-outline-dark:disabled {
-  color: #645CA1;
+  color: #242939;
   background-color: transparent;
 }
 
@@ -3597,14 +3607,14 @@ fieldset:disabled a.btn {
 .btn-outline-dark:not(:disabled):not(.disabled).active,
 .show > .btn-outline-dark.dropdown-toggle {
   color: #fff;
-  background-color: #645CA1;
-  border-color: #645CA1;
+  background-color: #242939;
+  border-color: #242939;
 }
 
 .btn-outline-dark:not(:disabled):not(.disabled):active:focus,
 .btn-outline-dark:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-dark.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(100, 92, 161, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(36, 41, 57, 0.5);
 }
 
 .btn-outline-alert {
@@ -5802,19 +5812,19 @@ a.badge-light.focus {
 
 .badge-dark {
   color: #fff;
-  background-color: #645CA1;
+  background-color: #242939;
 }
 
 a.badge-dark:hover,
 a.badge-dark:focus {
   color: #fff;
-  background-color: #504981;
+  background-color: #10131a;
 }
 
 a.badge-dark:focus,
 a.badge-dark.focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(100, 92, 161, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(36, 41, 57, 0.5);
 }
 
 .badge-alert {
@@ -5980,17 +5990,17 @@ a.badge-alert.focus {
 }
 
 .alert-dark {
-  color: #343054;
-  background-color: #e0deec;
-  border-color: #d4d1e5;
+  color: #13151e;
+  background-color: #d3d4d7;
+  border-color: #c2c3c8;
 }
 
 .alert-dark hr {
-  border-top-color: #c5c1dc;
+  border-top-color: #b5b6bc;
 }
 
 .alert-dark .alert-link {
-  color: #201d34;
+  color: black;
 }
 
 .alert-alert {
@@ -6429,20 +6439,20 @@ a.badge-alert.focus {
 }
 
 .list-group-item-dark {
-  color: #343054;
-  background-color: #d4d1e5;
+  color: #13151e;
+  background-color: #c2c3c8;
 }
 
 .list-group-item-dark.list-group-item-action:hover,
 .list-group-item-dark.list-group-item-action:focus {
-  color: #343054;
-  background-color: #c5c1dc;
+  color: #13151e;
+  background-color: #b5b6bc;
 }
 
 .list-group-item-dark.list-group-item-action.active {
   color: #fff;
-  background-color: #343054;
-  border-color: #343054;
+  background-color: #13151e;
+  border-color: #13151e;
 }
 
 .list-group-item-alert {
@@ -7413,14 +7423,14 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #645CA1 !important;
+  background-color: #242939 !important;
 }
 
 a.bg-dark:hover,
 a.bg-dark:focus,
 button.bg-dark:hover,
 button.bg-dark:focus {
-  background-color: #504981 !important;
+  background-color: #10131a !important;
 }
 
 .bg-alert {
@@ -7511,7 +7521,7 @@ button.bg-alert:focus {
 }
 
 .border-dark {
-  border-color: #645CA1 !important;
+  border-color: #242939 !important;
 }
 
 .border-alert {
@@ -11127,12 +11137,12 @@ a.text-light:focus {
 }
 
 .text-dark {
-  color: #645CA1 !important;
+  color: #242939 !important;
 }
 
 a.text-dark:hover,
 a.text-dark:focus {
-  color: #464070 !important;
+  color: #06070a !important;
 }
 
 .text-alert {
