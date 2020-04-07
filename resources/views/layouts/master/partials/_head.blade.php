@@ -14,4 +14,6 @@
     @stack('css')
 
     <script src="https://unpkg.com/feather-icons"></script>
+
+    @livewireStyles
 </head>
