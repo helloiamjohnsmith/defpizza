@@ -6,8 +6,6 @@
 
     <h2>{{ __('Choose your pizza') }}</h2>
 
-    <livewire:fff>
-
     <livewire:show-pizzas>
 
 @endsection

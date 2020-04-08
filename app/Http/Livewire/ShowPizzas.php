@@ -8,54 +8,33 @@ use Livewire\Component;
 
 class ShowPizzas extends Component
 {
-    public $type;
+    public $currentType;
 
-    public $message;
-
-//    protected $updatesQueryString = [
-//        ['type' => ['except' => '']]
-//    ];
+    protected $updatesQueryString = [
+        ['type' => ['except' => '']]
+    ];
 
     public function mount()
     {
-        $this->type = 'sea-food';
-
-        $this->message = 'Ini';
+        $this->currentType = '';
     }
 
     public function render()
     {
         $pizzas = Pizza::query();
 
-        $type = $this->type;
+        $type = $this->currentType;
 
-        if ($type != null) {
+        if ($type != '') {
             $pizzas->whereHas('types', function ($query) use ($type) {
                 $query->where('slug', $type);
             });
         }
 
-if (strlen ($this->message ) > 5) {
-    dd($this->message);
-}
-
         $pizzas = $pizzas->get();
-
-//        if ($type != null) {
-//            dd($pizzas);
-////            $pizzas->dd();
-//        }
-
 
         return view('livewire.show-pizzas')
             ->withPizzas($pizzas)
             ->withTypes(PizzaType::all());
-    }
-
-    public function setType($type)
-    {
-        $this->type = $type;
-
-//        $this->render();
     }
 }
