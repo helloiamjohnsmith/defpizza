@@ -1,7 +1,7 @@
 <div class="pizza-card" xmlns:wire="http://www.w3.org/1999/xhtml">
     <div class="pizza-card__wrapper">
         <div class="pizza-card__image">
-            <img src="{{ $pizza->image }}">
+            <img src="{{ asset('/images/pizzas/' . $pizza->image) }}">
         </div>
         <div class="pizza-card__header">
             <div class="pizza-card__title">
