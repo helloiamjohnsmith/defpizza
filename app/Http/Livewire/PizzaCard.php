@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Facades\Cart;
 use App\Models\Size;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class PizzaCard extends Component
@@ -37,5 +39,21 @@ class PizzaCard extends Component
 
         $this->price = ceil($this->pizza->actualPrice->price_as_int * $this->size->price_k);
         $this->weight = ceil($this->pizza->weight * $this->size->weight_k);
+    }
+
+    public function addPizza()
+    {
+        $item = [
+            'id' => Str::random(10),
+            'item_key' => $this->pizza->id . '-' . $this->size->id,
+            'title' => $this->pizza->title,
+            'size' => $this->size->size,
+            'price' => $this->price,
+            'image' => $this->pizza->image,
+        ];
+
+        Cart::add($item);
+
+        $this->emit('itemAdded');
     }
 }

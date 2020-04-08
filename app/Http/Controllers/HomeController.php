@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pizza;
-use App\Models\PizzaType;
-use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
-    public function home(Request $request)
+    public function home()
     {
-        $types = PizzaType::all();
+        return view('pages.home');
+    }
 
-        return view('pages.home.home')
-            ->withTypes($types);
+    public function cart()
+    {
+        return view('pages.cart');
     }
 }

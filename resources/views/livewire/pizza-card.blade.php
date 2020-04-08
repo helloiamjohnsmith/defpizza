@@ -64,7 +64,7 @@
 
             </div>
             <div class="pizza-card__box">
-                <button class="btn btn-outline-primary ml-auto">To cart</button>
+                <button class="btn btn-outline-primary ml-auto" wire:click="addPizza()">To cart</button>
             </div>
         </div>
     </div>

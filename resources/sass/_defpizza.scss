@@ -195,7 +195,111 @@ $brand-colors: (
     }
 }
 
+.cart-items {
+    margin: 30px 0 24px;
+    border-top: 1px solid #f1f2f5;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 
+    .cart-item {
+        display: flex;
+        width: 100%;
+        transition: all .2s ease;
+        transform: translateZ(0);
+        border-bottom: 1px solid #f1f2f5;
+        min-height: 96px;
+        padding: 16px 0;
+
+        .cart-item__image {
+            width: 67px;
+            position: relative;
+            flex: 0 0 auto;
+            margin-right: 12px;
+        }
+
+        .cart-item__info {
+            width: calc(85% - 233px);
+            flex: 0 0 auto;
+            padding-right: 12px;
+            align-self: center;
+
+            .cart-item__title {
+                margin: 0;
+                color: #000;
+                font-size: 22px;
+                line-height: 23px;
+                font-weight: 500;
+            }
+
+            .cart-item__size {
+                margin-top: 4px;
+                font-size: 12px;
+                line-height: 1.4;
+                color: #73798c;
+            }
+        }
+
+        .cart-item__actions {
+            flex: 0 0 auto;
+            width: 100px;
+            margin: 0 12px;
+            display: flex;
+            align-items: center;
+
+            .cart-item__button {
+                background: transparent;
+                outline: none !important;
+                vertical-align: middle;
+                cursor: pointer;
+                color: #FFB822;
+                border: none;
+                text-align: center;
+                font-weight: 400;
+                display: flex;
+                align-self: center;
+            }
+
+            .cart-item__quantity {
+                color: #555;
+                font-weight: 500;
+                font-size: 18px;
+                margin: 0 10px;
+            }
+        }
+
+        .cart-item__price {
+            flex: 0 0 auto;
+            width: 15%;
+            padding-top: 16px;
+            text-align: right;
+            font-size: 21px;
+            color: #373535;
+        }
+
+        .cart-item__delete {
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+
+            .cart-item__button {
+                background: transparent;
+                outline: none !important;
+                vertical-align: middle;
+                cursor: pointer;
+                color: #373535;
+                border: none;
+                text-align: center;
+                font-weight: 400;
+                display: flex;
+                align-self: center;
+            }
+        }
+    }
+}
 
 
 

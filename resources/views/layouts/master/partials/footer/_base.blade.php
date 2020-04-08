@@ -11,12 +11,6 @@
         <div class="row mt-1 text-white">
             <div class="d-flex flex-grow-1 px-3 py-2">
                 <div>© {{ date('Y') }} Def Pizza</div>
-                <div class="ml-auto mr-3">
-                    <a href="#">Legal</a>
-                </div>
-                <div>
-                    <a href="#">Help</a>
-                </div>
             </div>
         </div>
     </div>
