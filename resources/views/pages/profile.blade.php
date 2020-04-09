@@ -12,7 +12,7 @@
 
         <div class="col-12 col-md-3 profile__menu">
             @if(null === $user->email_verified_at)
-                <form class="mb-3" method="post" action="{{ route('user.email.verify') }}">
+                <form class="mb-3" method="post" action="{{ route('user.email.verify', $user) }}">
                     @csrf
                     @method('PATCH')
                     <button class="btn btn-primary" type="submit">{{ __('Verify email') }}</button>

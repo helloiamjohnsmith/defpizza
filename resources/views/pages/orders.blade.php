@@ -14,7 +14,7 @@
         <div class="alert alert-warning dp-alert">
             You have to verify email before we can show your orders
             <div>
-                <form class="mt-3" method="post" action="{{ route('user.email.verify') }}">
+                <form class="mt-3" method="post" action="{{ route('user.email.verify', $user) }}">
                     @csrf
                     @method('PATCH')
                     <button class="btn btn-primary" type="submit">{{ __('Verify email') }}</button>
