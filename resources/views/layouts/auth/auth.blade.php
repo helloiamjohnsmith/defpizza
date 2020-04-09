@@ -3,7 +3,7 @@
 
 @include('layouts._head')
 
-<body class="h-100">
+<body class="h-100" style="padding-top: 2rem;">
     <div id="app" class="d-flex flex-column h-100">
 
         @include('layouts.auth.partials.header._base')
