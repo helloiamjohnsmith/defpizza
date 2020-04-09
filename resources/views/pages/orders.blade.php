@@ -3,13 +3,13 @@
 @section('content')
 
     @if($user->verified)
-        @empty($orders)
+        @if(count($orders) == 0)
             <div class="alert alert-info dp-alert">
                 You doesn't have any order yet
             </div>
         @else
             @include('pages._orders-table')
-        @endempty
+        @endif
     @else
         <div class="alert alert-warning dp-alert">
             You have to verify email before we can show your orders

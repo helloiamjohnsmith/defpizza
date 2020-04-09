@@ -30,33 +30,15 @@ class ItemsList extends Component
 
     public function decrease($id)
     {
-        $this->message = 'TEST';
+
     }
 
     public function delete($id)
     {
         CartFacade::remove($id);
         $this->cart = CartFacade::get();
-        $this->emit('productRemoved');
-        $this->render();
+//        $this->emit('productRemoved');
+//        $this->render();
     }
 
-
-//
-//    public function checkout()
-//    {
-//        CartFacade::clear();
-//        $this->emit('clearCart');
-//        $this->cart = CartFacade::get();
-//    }
-
-//    private function calc()
-//    {
-//        $grouped = collect($this->items)->groupBy('id');
-//
-//
-//        $groupCount = $grouped->map(function ($item, $key) {
-//            return collect($item)->count();
-//        });
-//    }
 }
