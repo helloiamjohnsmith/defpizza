@@ -39,4 +39,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Address::class, 'owner_id');
     }
+
+    public function getVerifiedAttribute()
+    {
+        return null !== $this->email_verified_at;
+    }
 }
