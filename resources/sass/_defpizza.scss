@@ -196,9 +196,6 @@ $brand-colors: (
     width: 75%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
 
     .cart-item {
         display: flex;
@@ -256,6 +253,10 @@ $brand-colors: (
                 font-weight: 400;
                 display: flex;
                 align-self: center;
+
+                .far {
+                    font-size: 1.5rem;
+                }
             }
 
             .cart-item__quantity {
@@ -291,6 +292,11 @@ $brand-colors: (
                 font-weight: 400;
                 display: flex;
                 align-self: center;
+
+                .fas {
+                    font-size: 1.2rem;
+                }
+
             }
         }
     }
