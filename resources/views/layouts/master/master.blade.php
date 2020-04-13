@@ -20,4 +20,6 @@
     </script>
 
     @livewireScripts
+
+    @stack('js')
 </body>

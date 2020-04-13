@@ -10,3 +10,11 @@
 
 @endsection
 
+@push('js')
+<script>
+    window.livewire.on('itemAdded', title => {
+        toastr.success(title, 'Added to your cart')
+    })
+
+</script>
+@endpush

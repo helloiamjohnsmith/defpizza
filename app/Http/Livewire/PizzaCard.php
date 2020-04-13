@@ -54,6 +54,6 @@ class PizzaCard extends Component
 
         Cart::add($item);
 
-        $this->emit('itemAdded');
+        $this->emit('itemAdded', $this->pizza->title . ' ' . $this->size->size . ' cm');
     }
 }

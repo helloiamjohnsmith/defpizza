@@ -1,4 +1,4 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+#Def pizza
 
 ## About
 Application for ordering and delivery of pizza. The name is `Def Pizza`, which means `Definitely pizza`. Our slogan is 
@@ -33,11 +33,11 @@ Run migrations to create required tables:
 
 `php artisan migrate`
 
-At this point application is ready to run. 
+At this point application is ready to run. But for testing purposes it requires data seeding. 
 
 ## Seeding data
 The application is ready for seeding data. For some tables (ingredients, pizza sizes) real data was used. 
-But for most of tables `faker` was used. All pizza ingredients are real, but randomly generated for all pizzas. To seed 
+But for most of the tables `faker` was used. All pizza ingredients are real, but randomly generated for all pizzas. To seed 
 pizza data run:
 
 `php artisan db:seed`
@@ -48,20 +48,12 @@ Next run:
 
 This will fill pizza types table.
 
-both for testing and running in production mode with real data. Some models such as 
-`Pizza ingredient` available only with real values. Models like ``Pizza`` available with prepared real data which 
-automatically will be seeded in production mode. But there is ``Pizza factory`` for testing purposes.
-
 ## Additional information
 
 ### Database schema
 Database schema available at `database/model/defpizza.mwb`, which requires `MySQL Workbench` to open.
 
-### Architecture
+### Short functionality description
 The application principles suggest the possibility of ordering pizza both by the registered and guest users. If user 
-is a guest then order information is stored in the session, but when user is logged in, the data is stored in the database. 
-So if the user registers with the same email, all data on the history of orders becomes available.
-For users, it is possible to eliminate unwanted ingredients.
-
-## License
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+is a guest then all order information stored in the database and becomes available after registration. 
+User can choose between available pizza sizes. All information changes on the fly.
