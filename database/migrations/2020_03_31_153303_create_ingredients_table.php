@@ -72,12 +72,6 @@ class CreateIngredientsTable extends Migration
             ['title' => 'feta cheese', 'for_kids' => true, 'vegetarian' => false, 'sea' => false, 'healthy' => false, 'meat' => false, 'spicy' => 0],
             ['title' => 'sorrel', 'for_kids' => true, 'vegetarian' => true, 'sea' => false, 'healthy' => true, 'meat' => false, 'spicy' => 0],
         ];
-//
-//        $data = [];
-//
-//        foreach($ingredients as $index => $ingredient) {
-//            $data[$index] = ['id' => $index + 1, 'title' => $ingredient];
-//        }
 
         DB::table('ingredients')->insert($ingredients);
     }

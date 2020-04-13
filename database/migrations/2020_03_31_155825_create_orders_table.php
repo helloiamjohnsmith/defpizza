@@ -18,15 +18,19 @@ class CreateOrdersTable extends Migration
             $table->string('email');
             $table->string('number');
             $table->string('phone')->nullable();
+            $table->integer('total');
             $table->unsignedBigInteger('owner_id')->nullable();
             $table->unsignedBigInteger('state_id');
+            $table->unsignedBigInteger('delivery_type_id');
             $table->unsignedBigInteger('applied_promo_id')->nullable();
+            $table->unsignedBigInteger('address_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
             $table->index(["applied_promo_id"], 'fk_orders_promos1_idx');
             $table->index(["owner_id"], 'fk_orders_users_idx');
             $table->index(["state_id"], 'fk_orders_order_states1_idx');
+            $table->index(["delivery_type_id"]);
 
             $table->foreign('owner_id', 'fk_orders_users_idx')
                 ->references('id')
@@ -43,6 +47,12 @@ class CreateOrdersTable extends Migration
             $table->foreign('applied_promo_id', 'fk_orders_promos1_idx')
                 ->references('id')
                 ->on('promos')
+                ->onDelete('no action')
+                ->onUpdate('no action');
+
+            $table->foreign('delivery_type_id')
+                ->references('id')
+                ->on('delivery_types')
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });

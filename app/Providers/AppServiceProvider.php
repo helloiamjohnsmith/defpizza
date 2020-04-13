@@ -27,5 +27,9 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('datetime', function ($expression) {
             return "<?php echo ($expression)->format('d.m.Y H:i'); ?>";
         });
+
+        Blade::directive('date', function ($expression) {
+            return "<?php echo ($expression)->format('d.m.Y'); ?>";
+        });
     }
 }

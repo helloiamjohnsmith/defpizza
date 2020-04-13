@@ -39,6 +39,8 @@ class RegisterController extends Controller
 
         $user->save();
 
+        $user->attachOrders();
+
         return $user;
     }
 }

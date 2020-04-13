@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Item extends Model
 {
-    protected $fillable = [];
+    protected $fillable = ['title', 'price_as_int'];
 
     public function itemable()
     {

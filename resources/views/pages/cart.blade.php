@@ -2,6 +2,10 @@
 
 @section('content')
 
-    <livewire:items-list>
+
+    <div class="container">
+        <livewire:items-list>
+    </div>
+
 
 @endsection

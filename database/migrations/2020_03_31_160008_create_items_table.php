@@ -19,6 +19,7 @@ class CreateItemsTable extends Migration
             $table->integer('price_as_int');
             $table->unsignedBigInteger('itemable_id');
             $table->string('itemable_type');
+            $table->timestamps();
 
             $table->index(["itemable_id"], 'fk_items_pizzas1_idx');
 

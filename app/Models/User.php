@@ -44,4 +44,15 @@ class User extends Authenticatable
     {
         return null !== $this->email_verified_at;
     }
+
+    public function attachOrders()
+    {
+        $orders = Order::where('email', $this->email)->get();
+
+        foreach ($orders as $order) {
+            $order->owner_id = $this->id;
+
+            $order->save();
+        }
+    }
 }

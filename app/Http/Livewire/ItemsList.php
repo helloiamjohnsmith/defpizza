@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use App\Facades\Cart as CartFacade;
-use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class ItemsList extends Component
@@ -23,8 +22,6 @@ class ItemsList extends Component
     public function mount()
     {
         $this->updateItems();
-
-        $this->x = 1;
 
         $this->updateGroups();
     }
@@ -55,16 +52,11 @@ class ItemsList extends Component
             CartFacade::add($this->groupedItems[$key][0]);
         }
 
-        $this->cart = CartFacade::get();
+        $this->updateItems();
 
         $this->updateGroups();
 
         $this->emit('itemAdded');
-    }
-
-    public function dx()
-    {
-        $this->x++;
     }
 
     public function decrease($key)
@@ -73,7 +65,7 @@ class ItemsList extends Component
             CartFacade::remove($this->groupedItems[$key][0]['id']);
         }
 
-        $this->cart = CartFacade::get();
+        $this->updateItems();
 
         $this->updateGroups();
 
@@ -87,7 +79,7 @@ class ItemsList extends Component
                 CartFacade::remove($item['id']);
             }
 
-            $this->cart = CartFacade::get();
+            $this->updateItems();
 
             $this->updateGroups();
 
@@ -98,8 +90,8 @@ class ItemsList extends Component
     private function updateGroups()
     {
         $this->groupedItems = collect($this->items)
-            ->groupBy('item_key')
             ->sortBy('item_key')
+            ->groupBy('item_key')
             ->toArray();
     }
 

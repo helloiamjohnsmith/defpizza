@@ -8,10 +8,6 @@
             <h2>Your shopping cart</h2>
         </div>
 
-        {{--                    <div>--}}
-        {{--                        {{ dd($groupedItems['4-1']) }}--}}
-        {{--                    </div>--}}
-
         <div class="cart-items">
             @foreach($groupedItems as $key => $items)
                 @php $item = $items[0] @endphp
@@ -42,19 +38,24 @@
                     </div>
                 </div>
             @endforeach
-                <div class="cart-item">
-                    <div class="cart-item__image">
-                        {{ $x }}
-                    </div>
-                    <div class="cart-item__info">
-                        <div class="cart-item__title"><button class="btn btn-primary" wire:click="dx()">X</button> </div>
-                    </div>
-                    <div class="cart-item__actions">
-                        <div class="cart-item__quantity">{{ $this->itemsCount }} {{ $this->itemsCount > 1 ? 'pizzas' : 'pizza' }}</div>
-                    </div>
-                    <div class="cart-item__price">for {{ $this->totalCost }}&nbsp;&euro;</div>
-
+            <div class="cart-total">
+                <div class="cart-total__title">
+                    {{ __('Total') }}
                 </div>
+                <div class="cart-total__cost">
+                    <strong>{{ $this->itemsCount }}</strong> {{ $this->itemsCount > 1 ? 'pizzas' : 'pizza' }} for
+                    <strong>{{ $this->totalCost }}&nbsp;&euro;</strong></div>
+            </div>
+            @if( $this->totalCost < 50)
+                <div class="d-flex">
+                    <small>{{ __('Free delivery starts at') }} 50 &euro;</small>
+                </div>
+            @endif
+            <div class="d-flex">
+                <div class="ml-auto">
+                    <a href="{{ route('delivery') }}" class="btn btn-primary" role="button">{{ __('Proceed') }}</a>
+                </div>
+            </div>
         </div>
     @endempty
 </div>

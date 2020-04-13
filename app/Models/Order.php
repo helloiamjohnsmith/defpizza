@@ -28,9 +28,19 @@ class Order extends Model
         return $this->belongsTo(Promo::class);
     }
 
+    public function deliveryType()
+    {
+        return $this->belongsTo(DeliveryType::class);
+    }
+
+    public function address()
+    {
+        return $this->belongsTo(Address::class);
+    }
+
     public function items()
     {
-        return $this->hasManyThrough(Item::class, OrderItem::class, 'order_id', 'item_id');
+        return $this->belongsToMany(Item::class, OrderItem::class, 'order_id', 'item_id');
     }
 
     public function payments()

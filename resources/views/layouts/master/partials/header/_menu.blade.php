@@ -3,9 +3,9 @@
         <li class="nav-item">
             <a class="nav-link dp-nav-link @if(request()->is('/')) disabled @endif" href="/" aria-disabled="true">{{ __('Menu') }}</a>
         </li>
-        {{--        <li class="nav-item">--}}
-        {{--            <a class="nav-link dp-nav-link" href="#">{{ __('Promo') }}</a>--}}
-        {{--        </li>--}}
+                <li class="nav-item">
+                    <a class="nav-link dp-nav-link" href="/promos">{{ __('Promo') }}</a>
+                </li>
         {{--        <li class="nav-item">--}}
         {{--            <a class="nav-link dp-nav-link" href="#">{{ __('Contacts') }}</a>--}}
         {{--        </li>--}}

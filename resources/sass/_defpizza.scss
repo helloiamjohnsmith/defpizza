@@ -190,6 +190,9 @@ $brand-colors: (
     }
 }
 
+//
+// Cart items
+//
 .cart-items {
     margin: 30px 0 24px;
     border-top: 1px solid #f1f2f5;
@@ -200,8 +203,6 @@ $brand-colors: (
     .cart-item {
         display: flex;
         width: 100%;
-        transition: all .2s ease;
-        transform: translateZ(0);
         border-bottom: 1px solid #f1f2f5;
         min-height: 96px;
         padding: 16px 0;
@@ -300,6 +301,30 @@ $brand-colors: (
             }
         }
     }
+
+    .cart-total {
+        display: flex;
+        width: 100%;
+        min-height: 96px;
+        padding: 16px 0;
+        align-items: baseline;
+        margin: 15px 0px;
+
+        .cart-total__title {
+            font-size: 20px;
+            font-weight: 700;
+            flex-grow: 1;
+        }
+
+        .cart-total__cost {
+
+            strong {
+                font-weight:700;
+                font-size: 18px;
+                color: #FFB822;
+            }
+        }
+    }
 }
 
 .auth {
@@ -335,4 +360,62 @@ $brand-colors: (
     }
 }
 
+//
+// Promo
+//
+.promos {
+    flex: 1 0 auto;
+    margin: 0 auto 3rem auto;
 
+    .promo {
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid #f1f2f5;
+        min-height: 96px;
+        padding: 16px 0;
+
+        .promo__info {
+            flex-grow: 1;
+            padding-right: 12px;
+            align-self: center;
+
+            .promo__title {
+                text-transform: uppercase;
+                color: #000;
+                padding: 10px 0px;
+                font-weight: 700;
+                font-size: 18px;
+            }
+
+            .promo__date {
+                font-size: 12px;
+            }
+        }
+
+        .promo__code {
+            flex: 0 0 auto;
+            width: 100px;
+            margin: 0 12px;
+            display: flex;
+            align-items: center;
+
+            span {
+                padding: 2px 3px;
+                background-color: #eee;
+            }
+        }
+
+        .promo__discount {
+            flex: 0 1 auto;
+            width: 100px;
+            margin: 0 12px;
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            color: #FFB822;
+            font-weight: 700;
+        }
+
+
+    }
+}

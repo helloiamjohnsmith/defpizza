@@ -8,7 +8,7 @@
                 You doesn't have any order yet
             </div>
         @else
-            @include('pages._orders-table')
+            @include('pages.orders._orders-table')
         @endif
     @else
         <div class="alert alert-warning dp-alert">
