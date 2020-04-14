@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Actions\StoreDeliveryInformation;
 use App\Facades\Cart as CartFacade;
 use App\Models\DeliveryType;
-use App\Models\Promo;
 use Illuminate\Http\Request;
 
 class DeliveryController extends Controller
