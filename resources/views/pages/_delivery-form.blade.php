@@ -11,7 +11,7 @@
         @foreach($deliveryTypes as $type)
         <div class="form-check form-check-inline @error('type') is-invalid @enderror">
             <input class="form-check-input" type="radio" name="type" value="{{ $type->id }}" {{ old('type') == $type->id ? 'checked' : '' }}>
-            <label class="form-check-label">{{ $type->title }}</label>
+            <label class="form-check-label">{{ $type->title }} @if($type->price > 0) ({{ $type->price }} &euro;)@endif</label>
         </div>
         @endforeach
 

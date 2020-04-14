@@ -59,7 +59,7 @@
                     <td colspan="3" class="font-weight-bolder">
                         {{ __('Total') }}
                     </td>
-                    <td class="font-weight-bolder text-right">{{ $total }}&nbsp;&euro;</td>
+                    <td class="font-weight-bolder text-right">{{ $total }}&nbsp;&euro;/ {{ $totalUsd }}&nbsp;&dollar;</td>
                 </tr>
                 </tbody>
             </table>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\ConvertEurToUsd;
 use App\Facades\Cart as CartFacade;
 use App\Models\Promo;
 use Carbon\Carbon;
@@ -25,7 +26,7 @@ class HomeController extends Controller
         return view('pages.promos')->withPromos($promos);
     }
 
-    public function checkout()
+    public function checkout(ConvertEurToUsd $converter)
     {
         $items = CartFacade::get()['items'];
 
@@ -42,6 +43,8 @@ class HomeController extends Controller
 
         $total = $sum + $deliveryInfo['type']['price'];
 
+        $totalUsd = $converter->run($total);
+
         if ($promo) {
             $total = ceil($total - $total * ($promo->discount / 100));
         }
@@ -51,6 +54,7 @@ class HomeController extends Controller
             ->withSum($sum)
             ->withDeliveryInfo($deliveryInfo)
             ->withPromo($promo)
-            ->withTotal($total);
+            ->withTotal($total)
+            ->withTotalUsd($totalUsd);
     }
 }
