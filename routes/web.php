@@ -18,6 +18,6 @@ Route::get('/user', 'UserController@showProfile')->name('user.profile.show')->mi
 Route::patch('/user/{user}', 'UserController@updateProfile')->name('user.profile.update')->middleware('auth');
 Route::patch('/user/{user}/email', 'UserController@verifyEmail')->name('user.email.verify')->middleware('auth');
 
-Route::post('orders', 'HomeController@storeOrder')->name('orders.store');
+Route::post('orders', 'OrderController@store')->name('orders.store');
 Route::resource('orders', 'OrderController')->only(['index', 'show'])->middleware('auth');
 
