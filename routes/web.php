@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('/cart', 'HomeController@cart')->name('cart');
-Route::get('/delivery', 'HomeController@delivery')->name('delivery');
-Route::post('/delivery/info', 'HomeController@saveDeliveryInfo')->name('delivery.create');
+Route::get('/delivery', 'DeliveryController@delivery')->name('delivery');
+Route::post('/delivery/info', 'DeliveryController@storeDeliveryInfo')->name('delivery.store');
 Route::get('/promos', 'HomeController@promos')->name('promos');
 Route::get('/checkout', 'HomeController@checkout')->name('checkout');
 Route::get('/success', function () {

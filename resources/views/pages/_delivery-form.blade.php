@@ -1,5 +1,5 @@
 
-<form method="post" action="{{ route('delivery.create') }}">
+<form method="post" action="{{ route('delivery.store') }}">
     @csrf
 
     <div class="form-row">
@@ -24,7 +24,7 @@
     @guest
     <div class="form-row">
         <div class="form-group col-12">
-            <h4 class="mt-3">{{ __('User info') }}</h4>
+            <h4 class="mt-3">{{ __('Customer information') }}</h4>
         </div>
     </div>
     <div class="form-row">

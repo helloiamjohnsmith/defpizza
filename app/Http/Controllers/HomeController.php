@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Facades\Cart as CartFacade;
 use App\Models\Address;
-use App\Models\DeliveryType;
 use App\Models\Order;
 use App\Models\OrderState;
 use App\Models\Pizza;
@@ -33,35 +32,6 @@ class HomeController extends Controller
         $promos = Promo::where('ended_at', '>=', Carbon::now())->get();
 
         return view('pages.promos')->withPromos($promos);
-    }
-
-    public function delivery()
-    {
-        $sum = collect(CartFacade::get()['items'])->sum('price');
-
-        $empty = count(CartFacade::get()['items']) < 1;
-
-        $deliveryTypes = DeliveryType::whereNull('min_sum')->orWhere('min_sum', '<=', $sum)->get();
-
-        return view('pages.delivery')
-            ->withEmpty($empty)
-            ->withDeliveryTypes($deliveryTypes);
-    }
-
-    public function saveDeliveryInfo(Request $request)
-    {
-        $this->validator($request->all())->validate();
-
-        $deliveryInfo = [
-            'type' => ['id' => $request->type, 'title' => DeliveryType::find($request->type)->title, 'price' => DeliveryType::find($request->type)->price],
-            'user' => ['name' => $request->first_name, 'email' => $request->email],
-            'contacts' => ['street' => $request->street, 'city' => $request->city],
-            'promo' => Promo::where('code', $request->promo)->first()
-        ];
-
-        request()->session()->put('delivery', $deliveryInfo);
-
-        return redirect(route('checkout'));
     }
 
     public function checkout()
@@ -147,19 +117,5 @@ class HomeController extends Controller
         return redirect(route('success'));
     }
 
-    protected function validator(array $data)
-    {
-        $rules = [
-            'type' => ['required'],
-            'street' => ['required', 'min:3'],
-            'promo' => ['nullable', 'exists:promos,code']
-        ];
 
-        if (!Auth::check()) {
-            $rules['first_name'] = ['required', 'string', 'max:255'];
-            $rules['email'] = ['required', 'string', 'email', 'max:255', new LoginToUseEmail()];
-        }
-
-        return Validator::make($data, $rules);
-    }
 }
