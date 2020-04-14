@@ -19,7 +19,13 @@ class StoreDeliveryInformation
 
         $deliveryInfo = [
             'type' => ['id' => $type->id, 'title' => $type->title, 'price' => $type->price],
-            'user' => ['name' => $data['first_name'], 'email' => $data['email']],
+            'user' => [
+                'name' => Auth::check()
+                    ? Auth::user()->first_name
+                    : $data['first_name'],
+                'email' => Auth::check()
+                    ? Auth::user()->email
+                    : $data['email']],
             'contacts' => ['street' => $data['street'], 'city' => $data['city']],
             'promo' => Promo::where('code', $data['promo'])->first()
         ];
